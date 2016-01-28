@@ -1,0 +1,36 @@
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.layout.GridPane?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.text.Text?>
+<GridPane fx:controller="hamid.Controller"
+          xmlns:fx="http://javafx.com/fxml" alignment="center" hgap="10" vgap="10">
+
+    <Text text="Organize files in folder"
+          GridPane.columnIndex="0" GridPane.rowIndex="0"
+          styleClass="text"/>
+    <Text text="File Path"
+          GridPane.columnIndex="0" GridPane.rowIndex="1"
+          fx:id="selectFile"
+            styleClass="text"/>
+
+    <Button text="Choose Directory.."
+            onAction="#handleFileChooserButtonAction"
+            GridPane.rowIndex="1"
+            GridPane.columnIndex="1"/>
+    <Button text="Organize!"
+            onAction="#handleOrganizeButton"
+            GridPane.rowIndex="2"
+            GridPane.columnIndex="0"/>
+    <Text GridPane.columnSpan="2"
+          GridPane.rowIndex="3"
+          GridPane.columnIndex="0"
+            fx:id="done"
+            styleClass="text"/>
+    <Text GridPane.rowIndex="5"
+          GridPane.columnIndex="0"
+          GridPane.columnSpan="4"
+          wrappingWidth="400"
+            text = "Instructions : By default all the files in the selected folder will be organized in folders Music,Documents,Archives,Video,Pictures based on the file extension. Note: If there is any directory in selected directory then files are organized recursively."/>
+</GridPane>

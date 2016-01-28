@@ -1,0 +1,7 @@
+.text{
+-fx-font-size: 20px;
+-fx-font-weight: bold;
+}
+.root {
+-fx-background-color: #7fffd4;
+}

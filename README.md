@@ -1,5 +1,6 @@
 # File-Organizer
-Organize files in any directory by classifying them into different folders.
+Organize files in any directory by classifying them into different folders.<br>
+This project is inspired by https://github.com/bhrigu123/classifier.
 
 ## Requirements
 * Java Runtime Environment

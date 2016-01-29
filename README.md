@@ -14,6 +14,7 @@ Default:
 
 Custom:
 * Enter the folder name and then extension list separated by commas. Example html,css,js
+
 ####Note: Extensions should not contain the "." prefix.
 
 ##TODO:

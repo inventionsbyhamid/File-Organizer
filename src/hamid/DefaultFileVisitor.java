@@ -33,6 +33,25 @@ class DefaultFileVisitor extends SimpleFileVisitor<Path> {
         imagesPath = Paths.get(source,"Pictures");
         archivesPath = Paths.get(source,"Archives");
         videosPath = Paths.get(source,"Videos");
+        createDirs();
+    }
+    private void createDirs(){
+        try {
+            if (Files.notExists(audioPath))
+                Files.createDirectories(audioPath);
+            if (Files.notExists(docsPath))
+                Files.createDirectories(docsPath);
+            if (Files.notExists(imagesPath))
+                Files.createDirectories(imagesPath);
+            if (Files.notExists(archivesPath))
+                Files.createDirectories(archivesPath);
+            if (Files.notExists(videosPath))
+                Files.createDirectories(videosPath);
+        }
+        catch(IOException e)
+        {
+            System.out.println("Directory cannot be created "+e.getMessage());
+        }
     }
 
     @Override

@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<jnlp spec="1.0" xmlns:jfx="http://javafx.com" href="File_Organizer.jnlp">
+  <information>
+    <title>Sample JavaFX Application</title>
+    <vendor>Hamid Siddiqui</vendor>
+    <description>Sample JavaFX 2.0 application.</description>
+    <offline-allowed/>
+  </information>
+  <resources>
+    <jfx:javafx-runtime version="8.0+" href="http://javadl.sun.com/webapps/download/GetFile/javafx-latest/windows-i586/javafx2.jnlp"/>
+  </resources>
+  <resources>
+    <j2se version="1.6+" href="http://java.sun.com/products/autodl/j2se"/>
+    <jar href="File_Organizer.jar" size="9113" download="eager" />
+  </resources>
+  <applet-desc  width="600" height="400" main-class="com.javafx.main.NoJavaFXFallback"  name="File Organizer" >
+    <param name="requiredFXVersion" value="8.0+"/>
+  </applet-desc>
+  <jfx:javafx-desc  width="600" height="400" main-class="hamid.Main"  name="File Organizer" />
+  <update check="background"/>
+</jnlp>

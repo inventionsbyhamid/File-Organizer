@@ -11,7 +11,7 @@
   </resources>
   <resources>
     <j2se version="1.6+" href="http://java.sun.com/products/autodl/j2se"/>
-    <jar href="File_Organizer.jar" size="12761" download="eager" />
+    <jar href="File_Organizer.jar" size="8861" download="eager" />
   </resources>
   <applet-desc  width="600" height="400" main-class="com.javafx.main.NoJavaFXFallback"  name="File Organizer" >
     <param name="requiredFXVersion" value="8.0+"/>

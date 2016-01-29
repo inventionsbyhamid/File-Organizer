@@ -27,7 +27,7 @@ class CustomFileVisitor extends SimpleFileVisitor<Path> {
 
         String filename = file.getFileName().toString();
         int extensionpos = filename.lastIndexOf('.');
-        String extension = filename.substring(extensionpos+1);
+        String extension = filename.substring(extensionpos+1).toLowerCase();
         if(Files.notExists(newFilePath))
             Files.createDirectories(newFilePath);
         if(extensions==null)

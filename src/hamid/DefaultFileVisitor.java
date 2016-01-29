@@ -41,7 +41,7 @@ class DefaultFileVisitor extends SimpleFileVisitor<Path> {
 
         String filename = file.getFileName().toString();
         int extensionpos = filename.lastIndexOf('.');
-        String extension = filename.substring(extensionpos+1);
+        String extension = filename.substring(extensionpos+1).toLowerCase();
         try {
             if (images.contains(extension))
             {
@@ -61,7 +61,7 @@ class DefaultFileVisitor extends SimpleFileVisitor<Path> {
             }
             else if (videos.contains(extension))
             {
-                Files.move(file, Paths.get(videosPath.toString(), filename));
+                Files.move(file, Paths.get(videosPath.toString(), filename),StandardCopyOption.REPLACE_EXISTING);
             }
         }
         catch(IOException e){

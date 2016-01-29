@@ -29,10 +29,16 @@ public class Controller {
 
     static private boolean DEFAULT = true;
 
+    public void initialize(){
+        selectFile.setText(System.getProperty("user.dir"));
+
+    }
+
     @FXML
     protected void handleFileChooserButtonAction(ActionEvent event) {
         done.setText("");
         DirectoryChooser chooser = new DirectoryChooser();
+        chooser.setInitialDirectory(new File(selectFile.getText()));
         chooser.setTitle("Select Folder");
         File file = chooser.showDialog(new Stage());
         selectFile.setText(file.toString());
@@ -53,22 +59,29 @@ public class Controller {
             customFolderNameLabel.setVisible(false);
             DEFAULT=true;
         }
+        done.setText("");
 
     }
     @FXML
     protected void handleOrganizeButton(ActionEvent event)throws IOException {
         selectFile.setDisable(true);
-        done.setText("Processing");
+
         String current = selectFile.getText(); //"E:\\Download old";//System.getProperty("user.dir");
 
         System.out.println("Processing Files");
-        if(DEFAULT)
-        Files.walkFileTree(Paths.get(current), EnumSet.noneOf(FileVisitOption.class),1,new DefaultFileVisitor(current));
+        if(!DEFAULT && !customExtension.getText().equals("") && !customFolderName.getText().equals(""))
+        {   done.setText("Processing..");
+            Files.walkFileTree(Paths.get(current), EnumSet.noneOf(FileVisitOption.class), 1, new CustomFileVisitor(current, customExtension.getText().toLowerCase().split(","),customFolderName.getText()));
+            done.setText("Done!");
+        }
         else
-            Files.walkFileTree(Paths.get(current), EnumSet.noneOf(FileVisitOption.class), 2, new CustomFileVisitor(current,customExtension.getText().split(","),customFolderName.getText()));
-
-        System.out.println("Done!");
-        done.setText("Done!");
+            if(!DEFAULT && (customExtension.getText().equals("")||customFolderName.getText().equals("")))
+                done.setText("Folder Name or Extension is empty.\nUncheck Custom option for default.");
+        else
+        {   done.setText("Processing..");
+            Files.walkFileTree(Paths.get(current), EnumSet.noneOf(FileVisitOption.class), 1, new DefaultFileVisitor(current));
+            done.setText("Done!");
+        }
         selectFile.setDisable(false);
     }
 

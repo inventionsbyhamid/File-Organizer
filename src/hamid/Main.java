@@ -16,7 +16,7 @@ public class Main extends Application {
     public void start(Stage primaryStage) throws Exception{
         Parent root = FXMLLoader.load(getClass().getResource("main.fxml"));
         primaryStage.setTitle("File Organizer by Hamid");
-        Scene scene = new Scene(root,500,275);
+        Scene scene = new Scene(root,575,375);
         primaryStage.setScene(scene);
         scene.getStylesheets().add(getClass().getResource("main.css").toExternalForm());
         //done.setFont(new Font(20.0));

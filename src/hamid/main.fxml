@@ -4,6 +4,8 @@
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.text.Text?>
+<?import javafx.scene.control.CheckBox?>
+<?import javafx.scene.control.TextField?>
 <GridPane fx:controller="hamid.Controller"
           xmlns:fx="http://javafx.com/fxml" alignment="center" hgap="10" vgap="10">
 
@@ -19,16 +21,45 @@
             onAction="#handleFileChooserButtonAction"
             GridPane.rowIndex="1"
             GridPane.columnIndex="1"/>
+    <CheckBox
+            text ="Custom file extension"
+            GridPane.columnIndex="0"
+            GridPane.rowIndex="2"
+            fx:id="checkBoxCustom"
+            onAction="#handleCustomCheckBoxAction"
+            />
+    <Label
+            GridPane.columnIndex="0"
+            GridPane.rowIndex="3"
+            text="Folder name"
+            visible="false"
+            fx:id="customFolderNameLabel"/>
+    <TextField
+            GridPane.rowIndex="3"
+            GridPane.columnIndex="1"
+            fx:id="customFolderName"
+            visible="false"/>
+    <Label
+            GridPane.columnIndex="0"
+            GridPane.rowIndex="4"
+            text="File extension"
+            visible="false"
+            fx:id="customExtensionLabel"/>
+    <TextField
+            GridPane.rowIndex="4"
+            GridPane.columnIndex="1"
+            fx:id="customExtension"
+            visible="false"/>
     <Button text="Organize!"
             onAction="#handleOrganizeButton"
-            GridPane.rowIndex="2"
+            GridPane.rowIndex="5"
             GridPane.columnIndex="0"/>
     <Text GridPane.columnSpan="2"
-          GridPane.rowIndex="3"
+          GridPane.rowIndex="6"
           GridPane.columnIndex="0"
             fx:id="done"
             styleClass="text"/>
-    <Text GridPane.rowIndex="5"
+    <Text GridPane.rowIndex="7"
           GridPane.columnIndex="0"
           GridPane.columnSpan="4"
           wrappingWidth="400"

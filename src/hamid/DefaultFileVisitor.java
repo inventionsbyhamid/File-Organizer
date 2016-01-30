@@ -13,10 +13,10 @@ import java.util.HashSet;
 class DefaultFileVisitor extends SimpleFileVisitor<Path> {
 
     static final String audio_formats[] = {"mp3","aac","flac","ogg","wma","m4a","aiff"};
-    static final String image_formats[] = {"png","jpeg","jpg","gif","bmp","svg","webp"};
-    static final String doc_formats[]   = {"pdf","doc","docx","xls","xlsv","ppt","pptx","ppsx"};
+    static final String image_formats[] = {"png","jpeg","jpg","gif","bmp","svg","webp","fig"};
+    static final String doc_formats[]   = {"pdf","doc","docx","xls","xlsv","ppt","pptx","ppsx","xlsx"};
     static final String archive_formats[] = {"zip","rar","7z","tar","gz","bz2","iso","dmg"};
-    static final String video_formats[] = {"flv","ogg","ogv","avi","mov","qt","wmv","mp4","mpg","mpeg","3gp","mkv"};
+    static final String video_formats[] = {"flv","ogg","ogv","avi","mov","qt","wmv","mp4","mpg","mpeg","3gp","mkv","webm"};
 
     static final HashSet<String> images = new HashSet<String>(Arrays.asList(image_formats));
     static final HashSet<String> audio = new HashSet<String>(Arrays.asList(audio_formats));
